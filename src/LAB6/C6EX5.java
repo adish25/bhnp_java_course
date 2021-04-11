@@ -10,19 +10,19 @@ public class C6EX5 {
         double empSal = scanner.nextDouble();
         double restSal = 0;
         double tax = 0;
-        if (empSal>220000) {   // 23K + 23K + 74K + 100K
+        if (empSal>220_000) {   // 23K + 23K + 74K + 100K
             tax+=(empSal-220000)*0.5;
             empSal=220000;
         }
-        if (empSal>120000) {   // 23K + 23K + 74K
+        if (empSal>120_000) {   // 23K + 23K + 74K
             tax+=(empSal-120000)*0.4;
             empSal = 120000;
         }
-        if (empSal>46000) {    // 23K + 23K
+        if (empSal>46_000) {    // 23K + 23K
             tax+=(empSal-46000)*0.3;
             empSal = 46000;
         }
-        if (empSal>23000) {
+        if (empSal>23_000) {
             tax+=(empSal-23000)*0.2;
             empSal = 23000;
         }
