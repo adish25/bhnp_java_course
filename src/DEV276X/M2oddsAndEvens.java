@@ -11,8 +11,6 @@ public class M2oddsAndEvens {
     public static void main(String[] args) {
         gameIntro();
         playGame();
-        //calcTimeDifference();
-        //calcCountryArea();
         end();
     }
 
