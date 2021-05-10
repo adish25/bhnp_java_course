@@ -6,11 +6,11 @@ import java.awt.*;
 
 public class Tiger extends Critter {
 
-    private int moveCount;
+    private MyCounter moveCount;
     private Color currColor;
 
     public Tiger() {
-        this.moveCount = 0;
+        this.moveCount = new MyCounter();
         this.currColor = getColor();
     }
 
@@ -22,17 +22,6 @@ public class Tiger extends Critter {
         this.currColor = currColor;
     }
 
-    public int getMoveCount() {
-        return moveCount;
-    }
-
-    public void setMoveCount(int moveCount) {
-        this.moveCount = moveCount;
-    }
-
-    public void incMoveCount() {
-        this.moveCount++;
-    }
 
     public Action getMove(CritterInfo info) {
         /*
@@ -42,7 +31,7 @@ public class Tiger extends Critter {
         otherwise hop.
          */
 
-        incMoveCount();
+        moveCount.incCounter();
 
         if (info.getFront().equals(Neighbor.OTHER)) {
             return Action.INFECT;
@@ -68,7 +57,7 @@ public class Tiger extends Critter {
         then randomly picks another one of those colors for the next three moves,
         and so on.
          */
-        if (getMoveCount() % 3 > 0) {
+        if (moveCount.getCounter() % 3 > 0) {
             return getCurrColor();
         }
         switch ((int) Math.random() * (3)) {
