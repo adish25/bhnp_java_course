@@ -9,10 +9,10 @@ public class Bear extends Critter {
 
     public Bear() {
         this.isPolar = RandomSingleton.getInstance().nextBoolean();
+        this.bearRep = "/";
     }
 
     public Bear(boolean isPolar) {
-
         this.isPolar = isPolar;
         this.bearRep = "/";
     }
@@ -26,7 +26,7 @@ public class Bear extends Critter {
     }
 
     public String getBearRep() {
-        return bearRep;
+        return this.bearRep;
     }
 
     public void setBearRep(String bearRep) {
@@ -74,6 +74,14 @@ public class Bear extends Critter {
     }
 
     public String toString() {
+        printBear();
         return getBearRep();
+    }
+
+    public String printBear() {
+        return "Bear{" +
+                "isPolar=" + isPolar +
+                ", bearRep='" + bearRep + '\'' +
+                "} " + super.toString();
     }
 }
